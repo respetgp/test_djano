@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8">
+  <title>Page</title>
+  <style>
+
+ {% if day == "night" %}
+     body {
+    background: #333; /* Цвет фона */
+    color: #ffffff; /* Цвет текста */
+   }
+
+ {% else %}
+     body {
+    background: #ffffff; /* Цвет фона */
+    color: #000000; /* Цвет текста */
+   }
+   ️
+ {% endif %}
+
+  </style>
+ </head>
+ <body>
+  <p>
+      Сегодня у нас: {{time}}, а это значит, что у нас {{day_russian}}
+ {% if day == "night" %}
+      🌑
+      {% else %}
+☀️
+    {% endif %}
+<br>
+    <h1>Статистика по году</h1>
+      <table border="1">
+  <tbody>
+    <tr>
+      <td>До конца дня осталось</td>
+      <td>До конца месяца осталось </td>
+      <td>До нового года осталось &#127876;</td>
+    </tr>
+    <tr>
+      <td> {{minuts_end_day}} мин </td>
+      <td> {{days_to_end_month}} дней </td>
+      <td> {{days_ny}} дней </td>
+    </tr>
+    </tbody>
+</table>
+
+  </p>
+ </body>
+</html>
